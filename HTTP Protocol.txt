@@ -1,0 +1,115 @@
+HTTP Protocol
+
+HTTP (HyperText Transfer Protocol) is the foundation of communication on the web. It defines how clients send requests to servers and how servers send responses back.
+
+Main HTTP methods:
+
+GET: Retrieve data.
+POST: Submit new data.
+PUT: Update existing data.
+DELETE: Remove data.
+
+Common status codes:
+
+200: Success.
+404: Resource not found.
+500: Server error.
+
+REST APIs
+
+REST (Representational State Transfer) is an architectural style for designing APIs.
+
+Key principles:
+
+Statelessness: Each request contains all information needed by the server.
+Client-server architecture: The client and server are separate.
+Uniform interface: APIs use standard methods and formats.
+Cacheability: Responses can be cached to improve performance.
+
+RESTful APIs use HTTP methods for CRUD operations:
+
+Create: POST
+Read: GET
+Update: PUT
+Delete: DELETE
+
+API Request Components
+
+Endpoint URL: Location of the resource.
+HTTP method: Action to perform.
+Headers: Metadata such as content type or authentication token.
+Body/payload: Data sent to the server, usually in JSON format.
+
+The server processes the request and returns a response, often in JSON format.
+
+JSON
+
+JSON is the most common data format for APIs. It is lightweight and easy for humans and machines to read.
+
+It uses key-value pairs, similar to Python dictionaries.
+
+Example:
+
+{
+"name": "Debapriya",
+"age": 25,
+"skills": ["Python", "Machine Learning"]
+}
+
+Using requests in Python
+
+The requests library is commonly used to call APIs in Python.
+
+Install it:
+
+pip install requests
+
+Import it:
+
+import requests
+
+GET Request
+
+Use requests.get() to retrieve data. Query parameters can be passed using the params argument.
+
+Example:
+
+response = requests.get(
+"https://api.example.com/products",
+params={"category": "shoes", "page": 2}
+)
+
+Useful response attributes:
+
+response.status_code: Request status; 200 means success.
+response.headers: Response headers.
+response.text: Raw response as a string.
+response.json(): Parses JSON response.
+
+Always check the status code before using the response.
+
+POST Request
+
+Use requests.post() to send data to a server. Pass the payload using the json parameter; requests automatically sets Content-Type to application/json.
+
+Example:
+
+payload = {
+"name": "Running Shoes",
+"price": 2499
+}
+
+response = requests.post(
+"https://api.example.com/products",
+json=payload
+)
+
+print(response.status_code)
+print(response.json())
+
+LLM APIs
+
+To interact with an LLM API, send a prompt to the API. The API processes it and returns a generated response, usually in JSON format.
+
+Parse the response using response.json(), then access the required values using dictionary keys. For nested data, access multiple levels of keys.
+
