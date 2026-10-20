@@ -112,4 +112,4 @@ LLM APIs
 To interact with an LLM API, send a prompt to the API. The API processes it and returns a generated response, usually in JSON format.
 
 Parse the response using response.json(), then access the required values using dictionary keys. For nested data, access multiple levels of keys.
-
+https://www.analyticsvidhya.com/blog/2024/05/quick-matplotlib-tips-and-tricks-for-beginners/
