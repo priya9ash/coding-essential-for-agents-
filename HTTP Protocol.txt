@@ -113,3 +113,6 @@ To interact with an LLM API, send a prompt to the API. The API processes it and 
 
 Parse the response using response.json(), then access the required values using dictionary keys. For nested data, access multiple levels of keys.
 https://www.analyticsvidhya.com/blog/2024/05/quick-matplotlib-tips-and-tricks-for-beginners/
+
+
+in pandas both loc and iloc can be used to access data from dataframe but they work differently loc is used for label based indexing allowing to access both rows and collumn labels in ither hand iloc is used for intrger based location based indexing you want to access integer and label based location
